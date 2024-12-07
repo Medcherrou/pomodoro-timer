@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Clock, Play, Pause, RefreshCw, Plus, Minus } from 'lucide-react';
 
@@ -12,7 +13,7 @@ function App() {
   const formatTime = (timeInSeconds) => {
     const minutes = Math.floor(timeInSeconds / 60);
     const seconds = timeInSeconds % 60;
-    return `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   };
 
   const handleBreakDecrement = () => {
